@@ -1,57 +1,74 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./navbar.scss"
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./navbar.scss";
+import Cart from "../Cart/Cart";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
+  const [user, setUser] = useState(false);
+  const logout = () => {
+    signOut(auth)
+      .then(() => {
+        toast.success("Logout Successfull...");
+        navigate("/");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
   return (
     <div className="navbar">
       <div className="wrapper">
-        <div className="left">
-          <div className="item">
-            <img src="/images/en.png" alt="" />
-            <i className="fa-solid fa-chevron-down"></i>
-          </div>
-          <div className="item">
-            <span>USD</span>
-            <i className="fa-solid fa-chevron-down" />
-          </div>
-          <div className="item">
-            <Link className="link" to="/products/1">Women</Link>
-          </div>
-          <div className="item">
-            <Link className="link" to="/products/2">Men</Link>
-          </div>
-          <div className="item">
-            <Link className="link" to="/products/3">Children</Link>
-          </div>
-        </div>
         <div className="center">
-          <Link className="link" to="/">FASHIONSTORE</Link>
+          <Link className="link" to="/">
+            Vogueton
+          </Link>
         </div>
         <div className="right">
           <div className="item">
-            <Link className="link" to="/">Homepage</Link>
+            <Link className="link" to="/">
+              Home
+            </Link>
           </div>
           <div className="item">
-            <Link className="link" to="/">About</Link>
+            <Link className="link" to="/about">
+              About
+            </Link>
           </div>
           <div className="item">
-            <Link className="link" to="/">Contact</Link>
+            <Link className="link" to="/contact">
+              Contact
+            </Link>
           </div>
           <div className="item">
-            <Link className="link" to="/">Stores</Link>
+            <Link className="link" to="/store">
+              Store
+            </Link>
+          </div>
+          <div className="item">
+            <Link className="link" to="/" onClick={logout}>
+              LogOut
+            </Link>
           </div>
           <div className="icons">
             <i className="fa-solid fa-magnifying-glass"></i>
-            <i className="fa-regular fa-user"></i>
+            <Link to="/signup">
+              <i className="fa-regular fa-user"></i>
+            </Link>
             <i className="fa-regular fa-heart"></i>
-            <div className="cartIcon">
+            <div className="cartIcon" onClick={() => setOpen(!open)}>
               <i className="fa-solid fa-cart-shopping"></i>
               <span>0</span>
             </div>
           </div>
         </div>
       </div>
+      {user && <Auth />}
+      {open && <Cart />}
     </div>
   );
 };

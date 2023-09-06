@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./product.scss";
+import { Link, useNavigate } from "react-router-dom";
 
 const Product = () => {
   const [selectedImg, setSelectedImg] = useState(0);
@@ -8,6 +9,8 @@ const Product = () => {
     "https://i.pinimg.com/564x/d6/98/40/d698409f4efc38f857b0017fbc4e2983.jpg",
     "https://i.pinimg.com/564x/e2/7f/72/e27f7295fd95193e1452b535d88a24e8.jpg",
   ];
+  const navigate = useNavigate("/user");
+
   return (
     <div className="product">
       <div className="left">
@@ -38,18 +41,21 @@ const Product = () => {
           {quantity}
           <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
         </div>
-        <button className="add">
-          <i class="fa-solid fa-cart-plus"></i>
-          add to cart
-        </button>
+        <Link to={`/${navigate}`}>
+          <button className="add">
+            <i className="fa-solid fa-cart-plus"></i>
+            add to cart
+          </button>
+        </Link>
+
         <div className="links">
           <div className="item">
             add to wishlist
-            <i class="fa-regular fa-heart"></i>
+            <i className="fa-regular fa-heart"></i>
           </div>
           <div className="item">
             add to compare
-            <i class="fa-solid fa-scale-balanced"></i>
+            <i className="fa-solid fa-scale-balanced"></i>
           </div>
         </div>
         <div className="info">
