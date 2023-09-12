@@ -18,23 +18,18 @@ const Cart = () => {
       <h1>Product in your cart</h1>
       {data.map((item) => (
         <div className="item" key={item.id}>
-          <img src={item.img} alt="" />
+          {/* <img src="" alt="" /> */}
           <div className="details">
-            <h1>{item.title}</h1>
-            <p>{item.desc?.substring(0, 100)}</p>
-            <div className="price">1 × ${item.price}</div>
+            <h1>Nothing in your cart</h1>
+            <p></p>
+            <div className="price"></div>
           </div>
           <div className="delete">
-            <i class="fa-solid fa-trash"></i>
+            {/* <i class="fa-solid fa-trash"></i> */}
           </div>
         </div>
       ))}
-      <div className="total">
-        <span>SUBTOTAL</span>
-        <span>$120</span>
-      </div>
-      <button>PROCEED TO CHECKOUT</button>
-      <span className="reset">Reset Cart</span>
+      <div className="total"></div>
     </div>
   );
 };

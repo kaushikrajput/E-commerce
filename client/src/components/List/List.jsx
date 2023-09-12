@@ -6,8 +6,8 @@ const List = () => {
   const data = [
     {
       id: 1,
-      img: "https://i.pinimg.com/564x/b7/9d/4c/b79d4c3e6cd33900d22321c294e409bd.jpg",
-      img2: "https://i.pinimg.com/564x/73/3d/c9/733dc9794854749d0772fe88d519b0c5.jpg",
+      img: "https://i.pinimg.com/564x/47/b5/77/47b577b76462525fb29ebbc1a61f7b4b.jpg",
+      img2: "https://i.pinimg.com/564x/54/51/81/5451813888c2a1579c106b0426a90531.jpg",
       title: "Pants",
       isNew: true,
       oldPrice: 19,
@@ -15,7 +15,7 @@ const List = () => {
     },
     {
       id: 2,
-      img: "https://i.pinimg.com/564x/34/56/7e/34567e7b799dccac642d9a4cea8c9fdd.jpg",
+      img: "https://i.pinimg.com/564x/f9/ea/66/f9ea66704f21041d6c894d706329eb7b.jpg",
       title: "Sweatshirt",
       isNew: true,
       oldPrice: 19,
@@ -23,7 +23,7 @@ const List = () => {
     },
     {
       id: 3,
-      img: "https://i.pinimg.com/564x/b8/73/14/b873142282b09b2b8a5554f01d605c61.jpg",
+      img: "https://i.pinimg.com/564x/db/a8/ac/dba8ac8ff2746c0c428e3903a46d817b.jpg",
       title: "Sweatshirt",
       isNew: true,
       oldPrice: 19,
@@ -31,7 +31,7 @@ const List = () => {
     },
     {
       id: 4,
-      img: "https://i.pinimg.com/736x/4e/7d/1f/4e7d1f3e6456d3648fc0c1268ffdf99f.jpg",
+      img: "https://i.pinimg.com/564x/ef/52/86/ef528617d3ce52c0b0c014c18f887485.jpg",
       title: "Turtle Neck",
       isNew: true,
       oldPrice: 19,

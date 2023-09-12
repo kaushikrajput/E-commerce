@@ -15,7 +15,6 @@ const Categories = () => {
           </button>
         </div>
         <div className="row">
-          
           <img
             src="https://images.pexels.com/photos/2036650/pexels-photo-2036650.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt=""
@@ -27,23 +26,15 @@ const Categories = () => {
           </button>
         </div>
       </div>
-      <div className="col">
-        <div className="row">
-          
-          <img src="https://images.pexels.com/photos/18063988/pexels-photo-18063988/free-photo-of-a-couple-holding-hands-and-posing-in-studio.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-          <button>
-            <Link className="link" to="/products/1">
-              New Season
-            </Link>
-          </button>
-        </div>
-      </div>
+      
       <div className="col col-l">
         <div className="row">
           <div className="col">
             <div className="row">
-              
-              <img src="https://images.pexels.com/photos/3907595/pexels-photo-3907595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+              <img
+                src="https://images.pexels.com/photos/3907595/pexels-photo-3907595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt=""
+              />
               <button>
                 <Link className="link" to="/products/1">
                   Men
@@ -53,8 +44,10 @@ const Categories = () => {
           </div>
           <div className="col">
             <div className="row">
-              
-              <img src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+              <img
+                src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt=""
+              />
               <button>
                 <Link className="link" to="/products/1">
                   Accessories
@@ -64,11 +57,26 @@ const Categories = () => {
           </div>
         </div>
         <div className="row">
-          
-          <img src="https://images.pexels.com/photos/6630581/pexels-photo-6630581.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
+          <img
+            src="https://images.pexels.com/photos/6630581/pexels-photo-6630581.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
           <button>
             <Link className="link" to="/products/1">
-              Shoes
+              Sneakers
+            </Link>
+          </button>
+        </div>
+      </div>
+      <div className="col">
+        <div className="row">
+          <img
+            src="https://images.pexels.com/photos/18063988/pexels-photo-18063988/free-photo-of-a-couple-holding-hands-and-posing-in-studio.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt=""
+          />
+          <button>
+            <Link className="link" to="/products/1">
+              New Season
             </Link>
           </button>
         </div>

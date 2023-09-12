@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./navbar.scss";
 import Cart from "../Cart/Cart";
-import { signOut } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../../firebase";
 import { toast } from "react-toastify";
 
@@ -10,6 +10,20 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [user, setUser] = useState(false);
+  const [displayName, setDisplayName] = useState("");
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;
+        console.log(user.displayName);
+        setDisplayName(user.displayName);
+      } else {
+        setDisplayName("");
+      }
+    });
+  });
+
   const logout = () => {
     signOut(auth)
       .then(() => {
@@ -29,41 +43,32 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="right">
-          <div className="item">
-            <Link className="link" to="/">
-              Home
-            </Link>
-          </div>
-          <div className="item">
-            <Link className="link" to="/about">
-              About
-            </Link>
-          </div>
-          <div className="item">
-            <Link className="link" to="/contact">
-              Contact
-            </Link>
-          </div>
+          <i className="fa-solid fa-magnifying-glass"></i>
           <div className="item">
             <Link className="link" to="/store">
               Store
             </Link>
           </div>
           <div className="item">
-            <Link className="link" to="/" onClick={logout}>
-              LogOut
+            <Link className="link" to="/signup">
+              Sign in
             </Link>
+          <a href="#home" className="link">
+            {displayName}
+          </a>
           </div>
+
           <div className="icons">
-            <i className="fa-solid fa-magnifying-glass"></i>
-            <Link to="/signup">
-              <i className="fa-regular fa-user"></i>
-            </Link>
-            <i className="fa-regular fa-heart"></i>
+            {/* <i className="fa-regular fa-heart"></i> */}
             <div className="cartIcon" onClick={() => setOpen(!open)}>
-              <i className="fa-solid fa-cart-shopping"></i>
+            <i className="fa-solid fa-bag-shopping "></i>
               <span>0</span>
             </div>
+            {/* <div className="item">
+              <Link className="link" to="/" onClick={logout}>
+                LogOut
+              </Link>
+            </div> */}
           </div>
         </div>
       </div>
