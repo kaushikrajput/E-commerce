@@ -1,6 +1,6 @@
 export const SHOP_DATA = [
   {
-    title: "Men",
+    title: "men",
     items: [
       {
         id: 1,
@@ -47,7 +47,7 @@ export const SHOP_DATA = [
     ],
   },
   {
-    title: "Women",
+    title: "women",
     items: [
       {
         id: 7,
@@ -94,7 +94,7 @@ export const SHOP_DATA = [
     ],
   },
   {
-    title: "Snaeker",
+    title: "sneaker",
     items: [
       {
         id: 14,
@@ -141,7 +141,7 @@ export const SHOP_DATA = [
     ],
   },
   {
-    title: "Accessories",
+    title: "accessories",
     items: [
       {
         id: 20,
@@ -183,14 +183,14 @@ export const SHOP_DATA = [
         name: "Black Hat",
         imgUrl:
           "https://i.pinimg.com/564x/cb/40/80/cb4080dcad43f0c1db6b9730ee0eaabf.jpg",
-        price: 759,
+        price: 559,
       },
       {
         id: 26,
         name: "Gold-plated Ring",
         imgUrl:
           "https://i.pinimg.com/564x/c5/8f/2b/c58f2b5ff8ef55dafd62d77a0bf227ad.jpg",
-        price: 799,
+        price: 699,
       },
     ],
   },

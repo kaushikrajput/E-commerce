@@ -43,7 +43,9 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="right">
+          <div className="search-icon">
           <i className="fa-solid fa-magnifying-glass"></i>
+          </div>
           <div className="item">
             <Link className="link" to="/store">
               Store
