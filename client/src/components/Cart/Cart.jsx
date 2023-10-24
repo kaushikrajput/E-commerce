@@ -1,36 +1,39 @@
 import React from "react";
 import "./cart.scss";
+import { useSelector } from "react-redux";
+import CartItem from "../Cart-Item/cartItem";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const data = [
-    {
-      id: 1,
-      img: "https://i.pinimg.com/564x/d6/98/40/d698409f4efc38f857b0017fbc4e2983.jpg",
-      title: "Pants",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architect nihil voluptatem quisquam libero illo eligendi repellat nemo dolorem laboriosam veniam.",
-      isNew: true,
-      oldPrice: 19,
-      price: 12,
-    },
-  ];
+  const { cart } = useSelector((state) => state);
+
   return (
-    <div className="cart">
-      <h1>Product in your cart</h1>
-      {data.map((item) => (
-        <div className="item" key={item.id}>
-          {/* <img src="" alt="" /> */}
-          <div className="details">
-            <h1>Nothing in your cart</h1>
-            <p></p>
-            <div className="price"></div>
+    <>
+      {cart?.length > 0 ? (
+        <div className="cart">
+          <div className="container">
+            <p>Product</p>
+            <p>Description</p>
+            <p>Quantity</p>
+            <p>Price</p>
+            <p>Remove</p>
+            {cart.map((item) => (
+              <CartItem key={item.id} item={item} />
+            ))}
           </div>
-          <div className="delete">
-            {/* <i class="fa-solid fa-trash"></i> */}
-          </div>
+          <div className="total-ammount"></div>
         </div>
-      ))}
-      <div className="total"></div>
-    </div>
+      ) : (
+        <>
+          <div className="empty-cart">
+            <h2>Your cart is empty!</h2>
+            <Link className="link" to="/store">
+              <button className="button">shop now</button>
+            </Link>
+          </div>
+        </>
+      )}
+    </>
   );
 };
 

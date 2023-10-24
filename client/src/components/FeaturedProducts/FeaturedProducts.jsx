@@ -1,8 +1,7 @@
 import React from "react";
 import "./featuredProducts.scss";
-import Card from "../Card/Card";
 
-const FeaturedProducts = ({ type }) => {
+const FeaturedProducts = () => {
   const data = [
     {
       id: 1,
@@ -33,28 +32,24 @@ const FeaturedProducts = ({ type }) => {
     {
       id: 4,
       img: "https://i.pinimg.com/564x/05/46/91/0546919a9bb143649cc7726d7d8f3b5e.jpg",
-      title: "Turtle Neck",
+      title: "Black Turtle Neck",
       isNew: true,
-      oldPrice: 1699,
-      price: 1499,
+      oldPrice: 1499,
+      price: 1199,
     },
   ];
   return (
     <div className="featuredProducts">
-      <div className="top">
-        <h1>{type} Products</h1>
+      {/* <div className="top">
+        <h1>Featured Products</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque natus
           eum consequatur adipisci nostrum eos, qui quidem quaerat architecto
           voluptatibus, accusantium quod illum reprehenderit molestiae, neque
           iure veniam rem vel.
         </p>
-      </div>
-      <div className="bottom">
-        {data.map((item) => (
-          <Card item={item} key={item.id} />
-        ))}
-      </div>
+      </div> */}
+      
     </div>
   );
 };

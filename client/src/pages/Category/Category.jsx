@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./category.scss";
 import Product from "../../components/Product/Product";
 import { SHOP_DATA } from "../../shop-data";
@@ -10,14 +10,12 @@ const Category = () => {
 
   return (
     <div className="category">
-      {SHOP_DATA.filter((item) =>
-        urlVal === "store" ? true : item.title === urlVal
-      ).map((item) => (
-        <div key={item.id}>
+      {SHOP_DATA.filter((item) => item.title === urlVal).map((item,index) => (
+        <div key={index}>
           <h2>{item.title}</h2>
           <div className="container">
-            {item.items.map((product) => (
-              <Product product={product}/>
+            {item.items.map((product,index) => (
+              <Product product={product} key={index} />
             ))}
           </div>
         </div>

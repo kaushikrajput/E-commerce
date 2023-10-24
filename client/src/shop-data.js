@@ -18,7 +18,7 @@ export const SHOP_DATA = [
       },
       {
         id: 3,
-        name: " Jacket",
+        name: "Beige Jacket",
         imgUrl:
           "https://i.pinimg.com/564x/87/4f/79/874f793e60609bf3a4800033b2a4d838.jpg",
         price: 2999,
@@ -52,13 +52,15 @@ export const SHOP_DATA = [
       {
         id: 7,
         name: "Floral Suits",
-        imgUrl: "https://i.pinimg.com/564x/47/b5/77/47b577b76462525fb29ebbc1a61f7b4b.jpg",
+        imgUrl:
+          "https://i.pinimg.com/564x/47/b5/77/47b577b76462525fb29ebbc1a61f7b4b.jpg",
         price: 1899,
       },
       {
         id: 8,
         name: "Rose Mauve Hoodie",
-        imgUrl: "https://i.pinimg.com/564x/fb/5f/78/fb5f78135a556c283c41551938e115b2.jpg",
+        imgUrl:
+          "https://i.pinimg.com/564x/fb/5f/78/fb5f78135a556c283c41551938e115b2.jpg",
         price: 1599,
       },
       {
@@ -82,7 +84,8 @@ export const SHOP_DATA = [
       {
         id: 12,
         name: "Denim Shirt",
-        imgUrl: "https://i.pinimg.com/564x/e9/2a/c1/e92ac1846ffa36658826c6da4467d938.jpg",
+        imgUrl:
+          "https://i.pinimg.com/564x/e9/2a/c1/e92ac1846ffa36658826c6da4467d938.jpg",
         price: 3099,
       },
       {
@@ -94,7 +97,7 @@ export const SHOP_DATA = [
     ],
   },
   {
-    title: "sneaker",
+    title: "sneakers",
     items: [
       {
         id: 14,
@@ -191,6 +194,47 @@ export const SHOP_DATA = [
         imgUrl:
           "https://i.pinimg.com/564x/c5/8f/2b/c58f2b5ff8ef55dafd62d77a0bf227ad.jpg",
         price: 699,
+      },
+    ],
+  },
+  {
+    title: "perfumes",
+    items: [
+      {
+        id: 27,
+        name: "Beardo Godfather - 50ml",
+        imgUrl: "https://i.pinimg.com/564x/4b/94/2e/4b942e07f15cc041b20377ca56c5baac.jpg",
+        price: 1259,
+      },
+      {
+        id: 28,
+        name: "Villain Perfume - 100ml",
+        imgUrl: "https://i.pinimg.com/564x/ff/2e/d9/ff2ed9fc05e763c035bbdebd9404cc23.jpg",
+        price: 799,
+      },
+      {
+        id: 29,
+        name: "Christian Dior Sauvage ",
+        imgUrl: "https://i.pinimg.com/564x/da/98/e6/da98e6fc5e295e21ec4013154f041ea9.jpg",
+        price: 6999,
+      },
+      {
+        id: 30,
+        name: "SKINN BY TITAN - 50ml",
+        imgUrl: "https://i.pinimg.com/564x/e6/f7/d7/e6f7d768e8bd19b574b9bcc5ff8e98fd.jpg",
+        price: 2599,
+      },
+      {
+        id: 31,
+        name: "Chanel Bleu  50 / 100 ml",
+        imgUrl: "https://i.pinimg.com/564x/67/32/2f/67322f25264ab3c0e9dac88c87937dbb.jpg",
+        price: 5499,
+      },
+      {
+        id: 32,
+        name: "Zara Black Amber ",
+        imgUrl: "https://i.pinimg.com/564x/27/e3/c1/27e3c139c5a3253c5ae09dba47387935.jpg",
+        price: 1500,
       },
     ],
   },

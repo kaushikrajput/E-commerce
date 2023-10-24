@@ -21,6 +21,17 @@ const Login = () => {
   //   navigate("/");
   // };
 
+  const provider = new GoogleAuthProvider();
+  const signInWithGoogle = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        toast.success("Login Successfully");
+        navigate("/");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
   const login = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
@@ -35,17 +46,6 @@ const Login = () => {
       });
   };
 
-  const provider = new GoogleAuthProvider();
-  const signInWithGoogle = () => {
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        toast.success("Login Successfully");
-        navigate("/");
-      })
-      .catch((error) => {
-        toast.error(error.message);
-      });
-  };
 
   return (
     <div className="login">
@@ -80,7 +80,7 @@ const Login = () => {
           <Link to="/reset">Reset Password</Link>
         </div>
         <button className="google-popup" onClick={signInWithGoogle}>
-          <i class="fa-brands fa-google"></i>Login with Google
+          <i className="fa-brands fa-google"></i>Login with Google
         </button>
       </form>
       <p className="text-sm text-white text-center">

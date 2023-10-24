@@ -11,11 +11,13 @@ import "react-toastify/dist/ReactToastify.css";
 import Store from "./pages/Store/Store";
 import MenuItem from "./components/Menu-Item/MenuItem";
 import Category from "./pages/Category/Category";
+import { store } from "./store/store";
+import Cart from "./components/Cart/Cart";
 
 const App = () => {
   return (
     <div className="app">
-      <BrowserRouter>
+        <BrowserRouter>
           <ToastContainer />
           <ScrollToTop />
           <Navbar />
@@ -26,10 +28,10 @@ const App = () => {
             <Route path="/signup" element={<Signup />} />
             <Route path="/menu-item" element={<MenuItem />} />
             <Route path="/category/*" element={<Category />} />
-
+            <Route path="/cart" element={<Cart />} />
           </Routes>
           <Footer />
-      </BrowserRouter>
+        </BrowserRouter>
     </div>
   );
 };
