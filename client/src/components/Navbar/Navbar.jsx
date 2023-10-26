@@ -12,7 +12,8 @@ const Navbar = () => {
   const [displayName, setDisplayName] = useState("");
 
   const items = useSelector((state) => state.cartReducer);
-
+  console.log(items);
+  
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -64,7 +65,7 @@ const Navbar = () => {
             <a
               href="#home"
               className="link"
-              style={{ color: "red", paddingLeft: "10px" }}
+              style={{ color: "black", paddingLeft: "10px" }}
             >
               <i className="fa-solid fa-user"></i>Hello,&nbsp;
               {user && user.displayName ? user.displayName : "Guest"}

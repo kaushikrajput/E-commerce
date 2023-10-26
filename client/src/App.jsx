@@ -12,7 +12,7 @@ import Store from "./pages/Store/Store";
 import MenuItem from "./components/Menu-Item/MenuItem";
 import Category from "./pages/Category/Category";
 import { store } from "./store/store";
-import Cart from "./components/Cart/Cart";
+import Cart from "./pages/Cart/Cart";
 
 const App = () => {
   return (

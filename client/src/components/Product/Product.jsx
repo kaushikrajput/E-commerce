@@ -14,6 +14,7 @@ const Product = ({ product }) => {
 
   const [isAdded, setIsAdded] = useState(false);
   const dispatch = useDispatch();
+  
 
   const handleAddToCart = () => {
     const product = { id, name, price, imgUrl };

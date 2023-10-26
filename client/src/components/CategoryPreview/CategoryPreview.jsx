@@ -9,7 +9,6 @@ const CategoryPrevirew = ({ title }) => {
   const onClickHandler = () => {
     navigate(`/category/${title.toLowerCase()}`);
   };
-  console.log(onClickHandler);
 
   return (
     <div className="category-preview">
@@ -22,7 +21,7 @@ const CategoryPrevirew = ({ title }) => {
             {item.items
               .filter((_, idx) => idx < 4)
               .map((product) => (
-                <Product product={product} />
+                <Product product={product} key={product.id}/>
               ))}
           </div>
         </div>
