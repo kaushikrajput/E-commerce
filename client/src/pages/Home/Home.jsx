@@ -1,6 +1,7 @@
 import React from "react";
 import FeaturedProducts from "../../components/FeaturedProducts/FeaturedProducts";
 import Directory from "../../components/Directory/Directory";
+import './home.scss'
 
 const Home = () => {
   const categories = [

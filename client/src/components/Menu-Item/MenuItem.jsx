@@ -3,7 +3,7 @@ import "./menuItem.scss";
 import { useNavigate } from "react-router-dom";
 
 const MenuItem = ({ category }) => {
-  const { title, imgUrl } = category;
+  const { title, imgUrl,size } = category;
 
   const navigate = useNavigate();
 
@@ -11,7 +11,7 @@ const MenuItem = ({ category }) => {
     navigate(`/category/${title.toLowerCase()}`);
   };
   return (
-    <div className="menu-item">
+    <div className={`${size} menu-item`}>
       <div
         className="background-image"
         style={{ backgroundImage: `url(${imgUrl})` }}

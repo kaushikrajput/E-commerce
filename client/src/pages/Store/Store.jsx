@@ -1,11 +1,11 @@
 import React from "react";
 import "./store.scss";
-import CategoryPreview from "../../components/CategoryPreview/CategoryPreview";
+import StoreItems from "../../components/Store-Items/StoreItems";
 
 const Store = ({ title }) => {
   return (
     <div className="store">
-      <CategoryPreview title={title} />
+      <StoreItems title={title} />
     </div>
   );
 };

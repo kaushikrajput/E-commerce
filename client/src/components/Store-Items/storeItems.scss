@@ -1,23 +1,25 @@
-.category {
+.store-items {
   display: flex;
   flex-direction: column;
 
+  .item-category {
+    margin-bottom: 30px;
+  }
   h2 {
-    text-align: center;
-    margin-bottom: 25px;
     font-size: 28px;
+    margin-bottom: 25px;
+    width: 3.5%;
     text-transform: uppercase;
   }
-
   .container {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 10px;
+    display: flex;
+    justify-content: space-between;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .category {
+  .store-items {
+    margin: 60px auto;
     align-items: center;
 
     .container {

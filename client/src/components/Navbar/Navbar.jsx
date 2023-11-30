@@ -12,7 +12,6 @@ const Navbar = () => {
   const [displayName, setDisplayName] = useState("");
 
   const items = useSelector((state) => state.cartReducer);
-  console.log(items);
   
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -37,22 +36,21 @@ const Navbar = () => {
   };
   return (
     <div className="navbar">
-      <div className="wrapper">
-        <div className="center">
+        <div className="logo">
           <Link className="link" to="/">
-            Vogueton
+            E commerce
           </Link>
         </div>
         <div className="right">
-          <div className="search-icon">
+          {/* <div className="search-icon">
             <i className="fa-solid fa-magnifying-glass"></i>
-          </div>
+          </div> */}
           <div className="item">
             <Link className="link" to="/store">
               Store
             </Link>
           </div>
-          <div className="item">
+          {/* <div className="item">
             {user ? (
               <Link className="link" onClick={logout}>
                 LogOut
@@ -70,8 +68,8 @@ const Navbar = () => {
               <i className="fa-solid fa-user"></i>Hello,&nbsp;
               {user && user.displayName ? user.displayName : "Guest"}
             </a>
-          </div>
-          <Link to={"/cart"}>
+          </div> */}
+          <Link to={"/checkout"}>
             <div className="icons">
               <div className="cartIcon">
                 <i className="fa-solid fa-bag-shopping "></i>
@@ -80,7 +78,6 @@ const Navbar = () => {
             </div>
           </Link>
         </div>
-      </div>
       {/* {user && <Auth />} */}
       {/* {open && <Cart />} */}
     </div>
