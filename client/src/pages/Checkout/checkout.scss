@@ -57,7 +57,7 @@
 
 @media only screen and (max-width: 768px) {
   .checkout {
-    width: 85%;
+    width: 100%;
     margin: 20px auto 0px;
 
     .checkout-header {
@@ -67,6 +67,9 @@
         width: 20%;
         font-size: 13px;
       }
+    }
+    .total-ammount {
+      font-size: 25px;
     }
   }
 }
