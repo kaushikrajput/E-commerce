@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./checkout.scss";
 import { useSelector } from "react-redux";
 import CartItem from "../../components/Cart-Item/CartItem";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const { cartItem } = useSelector((state) => state.cartReducer);
@@ -11,8 +11,20 @@ const Cart = () => {
     (acc, curr) => acc + curr.quantity * curr.price,
     0
   );
+  const navigate = useNavigate();
 
- 
+  const [showAlert, setShowAlert] = useState(false);
+
+  const onCheckout = () => {
+    if (getTotal === 0) {
+      setShowAlert(true);
+      setTimeout(() => {
+        setShowAlert(false);
+      }, 5000);
+      return;
+    }
+    navigate("/payment");
+  };
   return (
     <>
       {CartItem?.length === 0 ? (
@@ -34,7 +46,10 @@ const Cart = () => {
           {cartItem?.map((item, id) => (
             <CartItem cartItem={item} key={id} />
           ))}
-          <div className="total-ammount">Total : {getTotal}</div>
+          <div className="total-ammount">TOTAL : ₹{getTotal}</div>
+          <button className="checkout-btn" onClick={onCheckout}>
+            Checkout
+          </button>
         </div>
       )}
     </>

@@ -11,24 +11,26 @@ import "react-toastify/dist/ReactToastify.css";
 import Store from "./pages/Store/Store";
 import Category from "./pages/Category/Category";
 import Checkout from "./pages/Checkout/Checkout";
+import Payment from "./pages/payment/payment";
 
 const App = () => {
   return (
     <div className="app">
-        <BrowserRouter>
-          <ToastContainer />
-          <ScrollToTop />
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/store/*" element={<Store />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/category/*" element={<Category />} />
-            <Route path="/checkout" element={<Checkout />} />
-          </Routes>
-          {/* <Footer /> */}
-        </BrowserRouter>
+      <BrowserRouter>
+        <ToastContainer />
+        <ScrollToTop />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/store/*" element={<Store />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/category/*" element={<Category />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/payment" element={<Payment />} />
+        </Routes>
+        {/* <Footer /> */}
+      </BrowserRouter>
     </div>
   );
 };

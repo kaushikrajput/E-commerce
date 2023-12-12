@@ -42,7 +42,6 @@ const cartSlice = createSlice({
         state.cartItem[itemIndex].quantity += 1;
       }
       localStorage.setItem("cart", JSON.stringify(state.cartItem));
-
     },
     decrementQuantity(state, action) {
       const itemIndex = state.cartItem.findIndex(
@@ -63,6 +62,5 @@ const cartSlice = createSlice({
 
 export const { addItem, removeItem, incrementQuantity, decrementQuantity } =
   cartSlice.actions;
-
 
 export default cartSlice.reducer;
