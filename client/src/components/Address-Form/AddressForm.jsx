@@ -57,7 +57,7 @@ const AddressForm = () => {
         <div className="mb-4">
           <form>
             <FormInput
-              label="First Name"
+              label="First name"
               type="text"
               name="firstName"
               value={firstName}
@@ -65,7 +65,7 @@ const AddressForm = () => {
               onChange={handleChange}
             />
             <FormInput
-              label="Last Name"
+              label="Last name"
               type="text"
               name="lastName"
               value={lastName}
