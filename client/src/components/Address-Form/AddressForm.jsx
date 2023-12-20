@@ -10,18 +10,6 @@ const AddressForm = () => {
     (acc, curr) => acc + curr.quantity * curr.price,
     0
   );
-  const shippingCost = () => {
-    if (getTotal >= 2000) {
-      return 150;
-    }
-    return 200;
-  };
-  const totalAmmount = () => {
-    if (getTotal > 0) {
-      return getTotal + 150;
-    }
-    return 0;
-  };
 
   const defaultFormFields = {
     firstName: "",
@@ -32,6 +20,14 @@ const AddressForm = () => {
 
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { firstName, lastName, address, phone } = formFields;
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormFields({ ...formFields, [name]: value });
+    console.log(formFields);
+  };
+
+  
   return (
     <div className="address">
       <div className="checkout-summary">
@@ -43,7 +39,7 @@ const AddressForm = () => {
           </li>
           <li className="list-group-item">
             Shipping
-            <span> ₹{shippingCost()}</span>
+            <span> ₹{getTotal ? 150 : 0}</span>
           </li>
           <li className="list-group-item">
             <div>
@@ -51,7 +47,7 @@ const AddressForm = () => {
               <p>(including GST)</p>
             </div>
             <span>
-              <strong>₹{totalAmmount()}</strong>
+              <strong>₹{getTotal + (getTotal ? 150 : 0)}</strong>
             </span>
           </li>
         </ul>
@@ -66,6 +62,7 @@ const AddressForm = () => {
               name="firstName"
               value={firstName}
               required
+              onChange={handleChange}
             />
             <FormInput
               label="Last Name"
@@ -88,7 +85,7 @@ const AddressForm = () => {
               value={phone}
               required
             />
-            <button>Add Address</button>
+            <button className="address-btn">Add Address</button>
           </form>
         </div>
       </div>

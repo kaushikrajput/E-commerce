@@ -1,4 +1,30 @@
-.group{
-    
+.group {
+  margin: 45px 0;
+  position: relative;
 
+  .form-input {
+    background: none;
+    background-color: #fff;
+    color: gray;
+    border: none;
+    margin: 25px 0;
+    // display: block;
+    width: 100%;
+    font-size: 18px;
+    border-bottom: 1px solid gray;
+    padding: 10px 10px 10px 5px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+  .form-input-label {
+    color: gray;
+    position: absolute;
+    left: 5px;
+    font-weight: 400;
+    font-size: 16px;
+    top: 10px;
+    transition: all 0.3s ease;
+  }
 }
