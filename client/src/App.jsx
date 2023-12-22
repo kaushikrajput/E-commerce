@@ -11,7 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Store from "./pages/Store/Store";
 import Category from "./pages/Category/Category";
 import Checkout from "./pages/Checkout/Checkout";
-import Payment from "./pages/payment/payment";
+import Payment from "./pages/Payment/Payment";
 
 const App = () => {
   return (
