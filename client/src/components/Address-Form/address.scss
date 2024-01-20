@@ -52,7 +52,7 @@
       font-weight: 700;
       margin-bottom: 10px;
     }
-    input{
+    input {
       margin-top: 0;
       margin-bottom: 0;
     }
@@ -82,6 +82,25 @@
         color: #000;
         border: 1px solid #000;
       }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .address{
+    flex-direction: column;
+    width: 80%;
+
+    .checkout-summary{
+      width: 90%;
+
+      h5{
+        margin-top: 10px;
+      }
+    }
+    .shipping-address{
+      margin: 0 auto;
+      width: 90%;
     }
   }
 }

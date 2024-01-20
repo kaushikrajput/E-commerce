@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./address.scss";
 import { useSelector } from "react-redux";
 import FormInput from "../Form-Input/FormInput";
@@ -20,14 +20,21 @@ const AddressForm = () => {
 
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { firstName, lastName, address, phone } = formFields;
+  const [userAddress, setUserAddress] = useState("");
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormFields({ ...formFields, [name]: value });
-    console.log(formFields);
   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormFields({...formFields});
+  };
+  console.log(handleSubmit);
+  // useEffect(() => {
+  //   localStorage.setItem("formFields", JSON.stringify(formFields));
+  // }, [formFields]);
 
-  
   return (
     <div className="address">
       <div className="checkout-summary">
@@ -69,6 +76,7 @@ const AddressForm = () => {
               type="text"
               name="lastName"
               value={lastName}
+              onChange={handleChange}
               required
             />
             <FormInput
@@ -76,16 +84,20 @@ const AddressForm = () => {
               type="text"
               name="address"
               value={address}
+              onChange={handleChange}
               required
             />
             <FormInput
               label="Mobile Number"
-              type="text"
+              type="number"
               name="phone"
               value={phone}
+              onChange={handleChange}
               required
             />
-            <button className="address-btn">Add Address</button>
+            <button className="address-btn" onClick={handleSubmit}>
+              Add Address
+            </button>
           </form>
         </div>
       </div>
